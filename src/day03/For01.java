@@ -37,8 +37,48 @@ public class For01 {
 	    
 	    System.out.println(); //줄바꿈
 	    
+	    //1~10까지 중에 짝수만 출력
+	    //2부터 2씩 증가
+	    for(int i=2; i<=10; i+=2) {
+	    	System.out.print(i+" ");
+	    }
 	    
+	    System.out.println();
+	    
+	    //
+	    for(int i=1; i<=10; i++) {
+	    	if(i % 2 ==0) {
+	    		System.out.print(i+" ");
+	    	}
+	    }
 		
+	    System.out.println();
+	    
+	    //1~10합계 (i변수 의 값을 누적)
+	    int sum = 0;
+	    for(int i=1; i<=10; i++) {
+	    	System.out.print(i+" ");
+	    	sum = sum + i;
+	    			System.out.println(sum);
+	    }
+	    System.out.println(sum);
+	    
+	    System.out.println();
+	    
+	    //1~10짝수 합계
+	    sum = 0; //sum 다시 쓰기위해 초기화
+	    for(int i = 1; i<=10; i++) {   	
+	    	if(i % 2 == 1) {
+	    		System.out.print(i+" ");
+	    		sum = sum + i; //sum += i (줄여쓰기 가능)
+	    		System.out.println(sum);
+	    	}
+	    }
+	    System.out.println();
+	    System.out.println(sum);
+	    
+	    
+	    
 	}
 
 }
