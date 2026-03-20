@@ -45,13 +45,57 @@ public class Exam03 {
 			case 3 : System.out.println(num1+" * "+num2+" = "+(num1*num2)); break;
 			case 4 : System.out.println(num1+" / "+num2+" = "+(num1/num2));break;
 			case 5 : System.out.println(num1+" % "+num2+" = "+(num1%num2));break;
-			case 6 : System.out.println("종료"); break;
 			default: System.out.println("잘못된 메뉴입니다."); break;
 			}
 		}
 		
 
 	
+	    // -------------------------------------나
+		
+		
+/*		
+		int mu = 0;
+		do {
+			System.out.println("---menu---");
+			System.out.println("1.+ | 2.- | 3.* | 4./ | 5.% | 6.종료");
+			System.out.println("menu>");
+			mu = scan.nextInt();
+		
+			if(mu == 6) {
+				System.out.println("종료합니다.");
+				break;
+			}else if(mu <=0 || mu > 6){
+				System.out.println("잘못된 메뉴!!");
+			}else {
+			
+				
+				System.out.println("두 숫자를 입력해주세요 (2 3)>");
+				int n1 = scan.nextInt();
+				int n2 = scan.nextInt();
+				
+				while(n2 == 0 && (mu == 4 || mu == 5)) {
+					System.out.println("피연산자가 0입니다. ");
+					System.out.println("num2를 다시 입력해주세요.");
+					n2 = scan.nextInt();
+				}
+				
+				switch(mu) {
+				case 1: System.out.println(num1+"+"+n2+"="+(num1+num2)); break;
+				case 2: System.out.println(num1+"-"+n2+"="+(num1-num2)); break;
+				case 3: System.out.println(num1+"*"+n2+"="+(num1*n2)); break;
+				case 4: System.out.println(num1+"/"+n2+"="+(num1/n2)); break;
+				case 5: System.out.println(num1+"%"+n2+"="+(n1%n2)); break;
+				case 6:  break;
+				default: break;
+				}
+			}
+			
+	
+		
+	*/	
+		
+		
 		
 			
 		
