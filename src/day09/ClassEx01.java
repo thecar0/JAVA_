@@ -67,6 +67,7 @@ class TV{
 	private int ch;
 	private int vol;
 	private int[] favor = new int[5];
+	private int index;
 	
 	
 	public TV() {
@@ -136,15 +137,31 @@ class TV{
 		}
 	}
    	
+/*  (나)	
    	public void Favor(int[] favor) {
 		for(int i=0; i<favor.length; i++) {
 		   favor[i] = this.ch;
 		}
 	}
+*/
+   	public void pick() {
+   		if(this.power) {
+   			if(favor.length == index) {
+   				index = 0;
+   			}
+   			favor[index] = ch;
+   			index++;
+   			System.out.println(ch+"선호채널 등록");
+   		}
+   	}
    	
-   	public void printArray(int[] favor) {
-		for(int i =0; i<5; i++) {
-			System.out.println(favor[i]+" ");
+   	public void printArray() {
+		for(int i =0; i<index; i++) {     //비어있는 선호채널 나타내려면 favor.length
+			if(favor[i] == 0) {
+				System.out.println("X");
+			}else {
+				System.out.println(favor[i]+" ");
+			}
 		}
    	}
 	// g s
