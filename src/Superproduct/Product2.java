@@ -1,22 +1,29 @@
 package Superproduct;
 
 public class Product2 {
-	private String menu;
+	private String menu;   
 	private int price;
-	private int count;
+/*	private int count;  // count, total 멤버변수는 order에 넣으면 됨
 	private int total;
-	
+*/	
+	// 기본생성자
 	public Product2() {}
 	
+	// 생성자
 	public Product2(String menu, int price) {
 		this.menu = menu;
 		this.price = price;
 	}
 	
-	public void cost() {
-		this.total = this.count * this.price;
+/*	public void cost() {
+		this.total = this.count * this.price;   // order로
 	}
-	
+*/	
+	// 이름과 가격을 추후 등록하는 메서드
+	public void intsertProduct (String name, int price) {
+		this.menu = menu;
+		this.price = price;
+	}
 
 //----------------------------------------------	
 	
@@ -36,23 +43,7 @@ public class Product2 {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
-	public int getTotal() {
-		return total;
-	}
-
-	public void setTotal(int total) {
-		this.total = total;
-	}
-
+	
 	@Override
 	public String toString() {
 		return menu +" "+ price;

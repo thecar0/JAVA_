@@ -23,6 +23,7 @@ public class Helloworld {
 		//원래 클래스는 정의하는 방법이 다르지만, String만은 예외로 자료형처럼 정의 가능
 		//대문자로 시작하는 변수는 상수일때의 규칙 (전부대문자)
 		
+		// first commit
 		
 
 	}
