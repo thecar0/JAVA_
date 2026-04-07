@@ -24,17 +24,16 @@ public class Exam01 {
 		 * user : 3 4 5   => 1b
 		 */
 		
-		
-		
-		int arr[] = new int[3];
+		int arr[] = new int[3]; //비교군을 안만듦
 			
 		
 		for(int i = 0; i < arr.length-1; i++) {     
 			
-			int com = (int)(Math.random()*9);
+			int com = (int)(Math.random()*9); //*10해야 0~9까지 
 			
-			arr[i] = com;
-			for(int j = i+1; j < i; j++) {                  //0번지 채우고 그 값 다르게 1번지 랜덤돌리고
+			arr[i] = com; //확인 전에 값을 넣어버려서 오휴
+			
+			for(int j = i+1; j < i; j++) {                  
 				if(arr[i] == arr[j]) { 
 					i--;
 					break;
@@ -57,7 +56,7 @@ public class Exam01 {
 		
 		int strike = 0;
 		int ball = 0;
-			for(int i = 0; i < arr.length;i++) {
+			for(int i = 0; i < arr.length;i++) {    //자리, 숫자 따로따로 비교하고 strike랑 ball올려야함
 			for(int j = 0; j < arr.length; j++) {
 				if(i == j) {
 					strike++;

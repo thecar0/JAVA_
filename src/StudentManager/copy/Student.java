@@ -3,6 +3,7 @@ package StudentManager.copy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Student {
 	//학생정보 => 학생한명
@@ -59,7 +60,11 @@ public class Student {
 			if(subjectList.get(i).getSubjectcode().equals(sub.getSubjectcode()));
 			System.out.println("이미 추가한 과목입니다."); return; //여기서 메서드 종료 후 뒷 부분 실행 X
 		}
-		System.out.println("수강신청 완료");
+		
+		if(subjectList.contains(sub)) { //list 에 해당 sub 객체가 있는지 확인 (true / false)
+			System.out.println("수강신청 완료");
+			return;
+		}
 		
 	}
 	
@@ -67,7 +72,7 @@ public class Student {
 	//뒷 배열번지 앞으로 불러와서 덮어쓰기 (마지막 번지는 따로 null처리 해줘야함)
 	//배열복사로 새 배열로 옮겨도 됨
 	//순번이 중요하지 않으면 철회하는 번지를 마지막번지와 바꿔도 됨 (마지막 번지는 따로 null처리 해줘야함)
-	public void removeSubject(Subject sub) {
+	public void removeSubject(Subject sub) {  //코드만 있는 subject 객체
 	    //subjectList에서 sub가 몇번지에 있는지 찾기(equals로 비교 방법도 있긴함)
 		int index = -1; //없는 번지로 설정
 		
@@ -77,12 +82,11 @@ public class Student {
 		}
 		
 		//배열에서 번지 찾기
-		for(int i = 0; i < subjectList.size(); i++) {
-			if(subjectList.get(i).getSubjectcode().equals(sub.getSubjectcode())) {
-				index = i;
-				break; //번지를 찾았다면 반복문 벗어나기
+		if(subjectList.remove(sub)) {
+				System.out.println("이미 추가한 과목입니다.");return;
 			}
-		}
+			
+		subjectList.remove(sub);
 	}
 
 // 출력 메서드
@@ -134,6 +138,23 @@ public class Student {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(studentno);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return Objects.equals(studentno, other.studentno);
 	}
 
 	

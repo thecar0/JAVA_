@@ -1,5 +1,7 @@
 package StudentManager.copy;
 
+import java.util.Objects;
+
 public class Subject {
 	//과목 정보 => 과목 한개
 	//과목정보(subject class) : 과목코드, 과목명, 시수, 강사명, 강의장
@@ -11,6 +13,11 @@ public class Subject {
 	private String classroom;
 	
 	public Subject() {}
+	
+	//equals를 위한 생성자
+	public Subject(String subjectcode) {
+		this.subjectcode = subjectcode;
+	}
 	
 	public Subject(String  subjectcode, String subjectname, String subjectday, String tname, String classroom) {
 		this.subjectcode = subjectcode;
@@ -70,6 +77,25 @@ public class Subject {
 	@Override
 	public String toString() {
 		return "Subject : " + subjectcode + subjectname + subjectday + tname + classroom ;
+	}
+	
+    //source -> hash equals
+	@Override
+	public int hashCode() {
+		return Objects.hash(subjectcode);
+	}
+
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Subject other = (Subject) obj;
+		return Objects.equals(subjectcode, other.subjectcode);
 	}
 	
 	

@@ -17,8 +17,9 @@ public class StudentController implements StudentProgram{
 	
 	//학생 미리 등록
 	public void addStudent() {
+		//add 값을 추가할때 꼭 object를 생성해서 (new) 추가 > 추가하지 않으면 주소가 공유됨
 		student.add(new Student("12345", "홍길동", 20, "1234-5678", "서울시"));
-		student.add(new Student("12345", "홍길동", 20, "1234-5678", "서울시"));
+		student.add(new Student("24680", "김철수", 20, "4567-8901", "서울시"));
 		student.add(new Student("67890", "이순신", 21, "2345-6789", "서울시"));
 		student.add(new Student("13579", "광개토", 22, "3456-7890", "서울시"));
 		}
